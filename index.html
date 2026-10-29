@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gavini Poojith Sai | Data Science Student</title>
+
+    <meta name="description"
+          content="Official portfolio of Gavini Poojith Sai, B.Tech Data Science student at Malla Reddy College of Engineering, Hyderabad. Explore my skills, projects, and professional profiles.">
+
+    <meta name="author" content="Gavini Poojith Sai">
+    <meta name="theme-color" content="#0b1120">
+
+    <style>
+        /* GENERAL SETTINGS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b1120;
+            color: #e5e7eb;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 17, 32, 0.95);
+            border-bottom: 1px solid #263248;
+            backdrop-filter: blur(12px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .logo {
+            color: #60a5fa;
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #60a5fa;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 90px 0;
+        }
+
+        .greeting {
+            color: #60a5fa;
+            font-weight: bold;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 66px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .hero h1 span {
+            color: #60a5fa;
+        }
+
+        .hero h2 {
+            font-size: clamp(19px, 3vw, 26px);
+            color: #cbd5e1;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #94a3b8;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-outline {
+            border: 1px solid #475569;
+            color: #e2e8f0;
+        }
+
+        .btn-outline:hover {
+            background: #1e293b;
+        }
+
+        .telegram-btn {
+            background: #229ed9;
+            color: white;
+        }
+
+        .telegram-btn:hover {
+            background: #168ac0;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 75px 0;
+            scroll-margin-top: 75px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .section-title span {
+            color: #60a5fa;
+        }
+
+        .section-description {
+            color: #94a3b8;
+            margin-bottom: 35px;
+        }
+
+        /* ABOUT */
+        .about-box {
+            background: #111c30;
+            border: 1px solid #263248;
+            padding: 30px;
+            border-radius: 14px;
+        }
+
+        .about-box p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        /* EDUCATION */
+        .education-card {
+            background: #111c30;
+            border: 1px solid #263248;
+            border-left: 4px solid #3b82f6;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .education-card h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .education-card p {
+            color: #94a3b8;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #172554;
+            color: #93c5fd;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-top: 12px;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 18px;
+        }
+
+        .skill-card {
+            text-align: center;
+            padding: 25px 15px;
+            background: #111c30;
+            border: 1px solid #263248;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+
+        .skill-card h3 {
+            color: #93c5fd;
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        /* PROJECTS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 22px;
+        }
+
+        .project-card {
+            padding: 25px;
+            border-radius: 12px;
+            background: #111c30;
+            border: 1px solid #263248;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+
+        .project-card .project-number {
+            color: #60a5fa;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .project-card h3 {
+            margin: 12px 0;
+            color: white;
+        }
+
+        .project-card p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* CONTACT */
+        .contact-box {
+            text-align: center;
+            padding: 40px 25px;
+            background: #111c30;
+            border: 1px solid #263248;
+            border-radius: 16px;
+        }
+
+        .contact-box h3 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .contact-box p {
+            color: #94a3b8;
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .telegram-username {
+            margin-top: 20px;
+            color: #60a5fa;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid #263248;
+            padding: 25px 0;
+            text-align: center;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 650px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 14px;
+            }
+
+            .hero {
+                min-height: 75vh;
+                padding: 65px 0;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            .section-title {
+                font-size: 27px;
+            }
+
+            .about-box {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">Poojith Sai.</a>
+
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HOME -->
+        <section class="hero container" id="home">
+
+            <div class="greeting">HELLO, WORLD! 👋</div>
+
+            <h1>
+                I'm <span>Gavini Poojith Sai</span>
+            </h1>
+
+            <h2>B.Tech Data Science Student | Aspiring Developer</h2>
+
+            <p>
+                Welcome to my personal portfolio! I'm a student at
+                Malla Reddy College of Engineering, Hyderabad, interested
+                in programming, data science, artificial intelligence,
+                and building useful software projects.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn btn-primary">
+                    Explore My Projects
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Contact Me
+                </a>
+            </div>
+
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about">
+            <div class="container">
+
+                <h2 class="section-title">
+                    About <span>Me</span>
+                </h2>
+
+                <p class="section-description">
+                    A little introduction about myself.
+                </p>
+
+                <div class="about-box">
+                    <p>
+                        Hi! I'm <strong>Gavini Poojith Sai</strong>,
+                        a Bachelor of Technology student pursuing
+                        Computer Science and Engineering with a
+                        specialization in Data Science.
+                    </p>
+
+                    <p>
+                        I study at Malla Reddy College of Engineering
+                        (MRCE) in Hyderabad, Telangana, India.
+                    </p>
+
+                    <p>
+                        I enjoy learning programming languages,
+                        exploring software development, and working
+                        on projects that help me improve my technical
+                        and problem-solving skills.
+                    </p>
+
+                    <p>
+                        My interests include Data Science, Artificial
+                        Intelligence, Machine Learning, and Android
+                        Application Development.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education">
+            <div class="container">
+
+                <h2 class="section-title">
+                    My <span>Education</span>
+                </h2>
+
+                <p class="section-description">
+                    My academic background.
+                </p>
+
+                <div class="education-card">
+
+                    <h3>
+                        Malla Reddy College of Engineering (MRCE)
+                    </h3>
+
+                    <p>
+                        Bachelor of Technology (B.Tech)
+                    </p>
+
+                    <p>
+                        Computer Science and Engineering
+                        (Data Science)
+                    </p>
+
+                    <p>
+                        Hyderabad, Telangana, India
+                    </p>
+
+                    <p>
+                        Expected Graduation: July 2028
+                    </p>
+
+                    <span class="badge">
+                        Currently Studying
+                    </span>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills">
+            <div class="container">
+
+                <h2 class="section-title">
+                    Technical <span>Skills</span>
+                </h2>
+
+                <p class="section-description">
+                    Technologies and programming languages I'm learning.
+                </p>
+
+                <div class="skills-grid">
+
+                    <div class="skill-card">
+                        <h3>Python</h3>
+                        <p>Programming</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>C</h3>
+                        <p>Programming Fundamentals</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Java</h3>
+                        <p>Object-Oriented Programming</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>SQL</h3>
+                        <p>Database Concepts</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>GitHub</h3>
+                        <p>Code Hosting and Projects</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Data Science</h3>
+                        <p>Academic Interest</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+            <div class="container">
+
+                <h2 class="section-title">
+                    My <span>Projects</span>
+                </h2>
+
+                <p class="section-description">
+                    Some of the projects I have explored.
+                </p>
+
+                <div class="projects-grid">
+
+                    <div class="project-card">
+                        <div class="project-number">PROJECT 01</div>
+
+                        <h3>Notes Application</h3>
+
+                        <p>
+                            An Android application concept for creating,
+                            organizing, and managing personal notes.
+                        </p>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-number">PROJECT 02</div>
+
+                        <h3>IPL Auction Application</h3>
+
+                        <p>
+                            A cricket auction application concept for
+                            selecting players, managing team budgets,
+                            and conducting auctions with friends.
+                        </p>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-number">PROJECT 03</div>
+
+                        <h3>Programming Practice</h3>
+
+                        <p>
+                            Developing programming and problem-solving
+                            skills through coding exercises and
+                            academic projects.
+                        </p>
+                    </div>
+
+                </div>
+
+                <p style="color:#94a3b8; margin-top:20px; font-size:13px;">
+                    Note: Project descriptions are introductory summaries.
+                    Add repository links and demos when your projects
+                    are ready to share publicly.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="container">
+
+                <h2 class="section-title">
+                    Contact <span>Me</span>
+                </h2>
+
+                <p class="section-description">
+                    Let's connect and share ideas!
+                </p>
+
+                <div class="contact-box">
+
+                    <h3>Get in Touch 👋</h3>
+
+                    <p>
+                        Interested in connecting about programming,
+                        technology, projects, or learning opportunities?
+                        Feel free to reach out.
+                    </p>
+
+                    <div class="contact-links">
+
+                        <a
+                            href="https://t.me/poojithh_005"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn telegram-btn">
+
+                            ✈️ Contact Me on Telegram
+
+                        </a>
+
+                        <a
+                            href="https://github.com/poojith-gavini"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-outline">
+
+                            GitHub Profile
+
+                        </a>
+
+                    </div>
+
+                    <p class="telegram-username">
+                        Telegram: @poojithh_005
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>
+                © 2026 Gavini Poojith Sai.
+                Built with HTML and CSS.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
